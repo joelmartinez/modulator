@@ -1,0 +1,23 @@
+﻿---
+# Site configuration file for modulator library docs
+
+# site basics
+title: Modulator Library Documentation
+email: joel@joelmartinez.dev
+description: >-
+  Documentation for the Modulator C# library - a modulation library for generating and manipulating waveforms.
+
+# base URL for sitemap generation
+baseUrl: https://joelmartinez.github.io/modulator/
+
+# cache busting configuration
+cacheBusting:
+  enabled: true
+
+# razor templates
+templates_folder: templates
+
+# main site folder
+areas:
+  - source_folder: /source
+    output_folder: /
