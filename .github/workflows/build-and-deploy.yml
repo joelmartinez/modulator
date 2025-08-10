@@ -30,7 +30,7 @@ jobs:
     - name: Build Docs with Chloroplast
       uses: joelmartinez/chloroplast-docs-action@main
       with:
-        config: docs/SiteConfig.yml
+        rootpath: docs
         outpath: docsout
         
     - name: Upload Documentation Artifacts
