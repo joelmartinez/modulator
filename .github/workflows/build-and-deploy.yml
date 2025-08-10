@@ -26,20 +26,18 @@ jobs:
       
     - name: Test
       run: dotnet test src/ --no-build --verbosity normal
-      
-    - name: Install Chloroplast
-      run: dotnet tool install --global Chloroplast.Tool
-      
-    - name: Build Documentation
-      run: |
-        cd docs
-        chloroplast build
+
+    - name: Build Docs with Chloroplast
+      uses: joelmartinez/chloroplast-docs-action@main
+      with:
+        rootpath: docs
+        outpath: docsout
         
     - name: Upload Documentation Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: documentation
-        path: docs/out/
+        path: docsout
         
   deploy-docs:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
