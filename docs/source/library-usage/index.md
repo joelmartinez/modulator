@@ -41,7 +41,7 @@ var modulated = carrier.ApplyModulator(modulator);
 
 ## SinOscillator Class
 
-The `SinOscillator` class generates sine wave signals and is the primary building block for creating oscillators.
+The `SinOscillator` class generates sine wave signals and is the primary building block for creating smooth oscillators.
 
 ### Constructor
 ```csharp
@@ -79,6 +79,128 @@ var lfo = new SinOscillator(2.5, 0.5); // 2.5Hz at 50% amplitude
 var carrier = new SinOscillator(440, 1.0);
 var modulated = carrier.ApplyModulator(lfo);
 ```
+
+## DigitalSquareOscillator Class
+
+The `DigitalSquareOscillator` class generates clean, digital square wave signals with instantaneous transitions between 0 and amplitude values.
+
+### Constructor
+```csharp
+public DigitalSquareOscillator(double rate, double amplitude)
+```
+
+- **rate**: Frequency in Hz (cycles per second)
+- **amplitude**: Peak amplitude of the square wave
+
+### Properties
+- **Rate**: Gets the frequency of the oscillator
+- **Amplitude**: Gets the amplitude of the oscillator
+
+### Characteristics
+- **Clean transitions**: Instantaneous switching between 0 and amplitude
+- **Perfect timing**: Exactly 50% duty cycle
+- **Digital precision**: No overshoot, undershoot, or settling time
+
+### Example Usage
+
+#### Basic Digital Square Wave
+```csharp
+// Create a 1kHz digital square wave
+var digitalSquare = new DigitalSquareOscillator(1000, 1.0);
+
+// The output will be exactly 0 or 1.0 at any point in time
+for (double t = 0; t < 0.002; t += 0.0001) // 2ms worth of samples
+{
+    double value = digitalSquare.GetValue(t);
+    Console.WriteLine($"Time: {t:F4}s, Value: {value:F1}"); // Will print 0.0 or 1.0
+}
+```
+
+#### Clock Signal Generation
+```csharp
+// Generate a precise clock signal
+var clockSignal = new DigitalSquareOscillator(100, 3.3); // 100Hz, 3.3V logic level
+
+// Perfect for timing applications
+bool isHigh = clockSignal.GetValue(someTime) > 1.5; // TTL logic threshold
+```
+
+## AnalogSquareOscillator Class
+
+The `AnalogSquareOscillator` class simulates realistic analog square wave behavior with configurable rise/fall times and smooth transitions.
+
+### Constructors
+```csharp
+public AnalogSquareOscillator(double rate, double amplitude)
+public AnalogSquareOscillator(double rate, double amplitude, double riseTime, double fallTime)
+```
+
+- **rate**: Frequency in Hz (cycles per second)
+- **amplitude**: Peak amplitude of the square wave
+- **riseTime**: Time to rise from 10% to 90% amplitude (as fraction of period, default: 0.01)
+- **fallTime**: Time to fall from 90% to 10% amplitude (as fraction of period, default: 0.01)
+
+### Properties
+- **Rate**: Gets the frequency of the oscillator
+- **Amplitude**: Gets the amplitude of the oscillator
+- **RiseTime**: Gets the rise time as a fraction of the period
+- **FallTime**: Gets the fall time as a fraction of the period
+
+### Characteristics
+- **Smooth transitions**: Exponential rise and fall curves
+- **Overshoot/undershoot**: Slight overshoot on rising edge, undershoot on falling edge
+- **Settling behavior**: Small oscillations after transitions
+- **Analog realism**: Mimics real analog circuit behavior
+
+### Example Usage
+
+#### Basic Analog Square Wave
+```csharp
+// Create an analog square wave with default rise/fall times
+var analogSquare = new AnalogSquareOscillator(440, 1.0);
+
+// The output will show smooth transitions and analog characteristics
+for (double t = 0; t < 0.01; t += 0.0001)
+{
+    double value = analogSquare.GetValue(t);
+    Console.WriteLine($"Time: {t:F4}s, Value: {value:F6}");
+}
+```
+
+#### Custom Rise/Fall Times
+```csharp
+// Create an analog square wave with slower transitions
+var slowAnalog = new AnalogSquareOscillator(100, 1.0, 0.05, 0.08);
+// 5% rise time, 8% fall time (as fraction of period)
+
+// This simulates a slower op-amp or transistor circuit
+```
+
+#### Audio Synthesis Application
+```csharp
+// Square wave for audio synthesis with natural analog characteristics
+var audioSquare = new AnalogSquareOscillator(220, 0.8, 0.02, 0.03);
+
+// Apply some vibrato
+var vibrato = new SinOscillator(5, 0.05);
+var expressiveSquare = audioSquare.ApplyModulator(vibrato);
+```
+
+### Choosing Between Digital and Analog Square Waves
+
+**Use DigitalSquareOscillator when:**
+- You need perfect, instantaneous transitions
+- Building digital clock or timing signals
+- Mathematical precision is required
+- Simulating ideal digital circuits
+- Creating harsh, aggressive audio textures
+
+**Use AnalogSquareOscillator when:**
+- You want realistic analog circuit behavior
+- Building audio applications where warmth matters
+- Simulating real electronic instruments
+- Need smooth transitions for visual applications
+- Modeling actual hardware behavior
 
 ## ModulatedSource Class
 
@@ -260,6 +382,62 @@ public class SimpleVoice
 }
 ```
 
+### Multi-Oscillator Synthesizer with Different Wave Types
+```csharp
+public class MultiOscSynth
+{
+    private readonly IModulationSource _combinedSignal;
+    
+    public MultiOscSynth(double frequency)
+    {
+        // Main oscillators at the same frequency
+        var sineOsc = new SinOscillator(frequency, 0.3);
+        var digitalSquare = new DigitalSquareOscillator(frequency, 0.4);
+        var analogSquare = new AnalogSquareOscillator(frequency, 0.3, 0.03, 0.04);
+        
+        // Sub-oscillator one octave down
+        var subOsc = new AnalogSquareOscillator(frequency / 2, 0.2);
+        
+        // Combine all oscillators
+        _combinedSignal = sineOsc
+            .ApplyModulator(digitalSquare)
+            .ApplyModulator(analogSquare)
+            .ApplyModulator(subOsc);
+    }
+    
+    public double GetSample(double time) => _combinedSignal.GetValue(time);
+}
+```
+
+### Percussion Synthesis with Square Waves
+```csharp
+public class DrumSynth
+{
+    public static IModulationSource CreateKick(double frequency = 60)
+    {
+        // Use analog square for body, digital square for click
+        var body = new AnalogSquareOscillator(frequency, 1.0, 0.1, 0.2);
+        var click = new DigitalSquareOscillator(frequency * 4, 0.3);
+        
+        // Pitch envelope - frequency sweeps down quickly
+        var pitchEnv = new SinOscillator(0.5, frequency * 0.5); // Slow sweep
+        
+        return body.ApplyModulator(click).ApplyModulator(pitchEnv);
+    }
+    
+    public static IModulationSource CreateSnare(double frequency = 200)
+    {
+        // Digital square for the sharp attack
+        var tone = new DigitalSquareOscillator(frequency, 0.6);
+        
+        // High frequency modulation for noise-like character
+        var noise = new AnalogSquareOscillator(frequency * 7, 0.4, 0.005, 0.005);
+        
+        return tone.ApplyModulator(noise);
+    }
+}
+```
+
 ### Signal Generator for Testing
 ```csharp
 public class TestSignalGenerator
@@ -271,6 +449,18 @@ public class TestSignalGenerator
         var sweepMod = new SinOscillator(1.0 / duration, sweepRate);
         
         return baseOsc.ApplyModulator(sweepMod);
+    }
+    
+    public static IModulationSource CreateSquareWaveTest(double frequency)
+    {
+        // Compare digital vs analog square waves
+        var digital = new DigitalSquareOscillator(frequency, 0.5);
+        var analog = new AnalogSquareOscillator(frequency, 0.5);
+        
+        // Modulate between them slowly
+        var selector = new SinOscillator(0.1, 0.25); // Very slow fade
+        
+        return digital.ApplyModulator(analog).ApplyModulator(selector);
     }
 }
 ```

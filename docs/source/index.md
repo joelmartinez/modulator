@@ -37,11 +37,18 @@ var modulator = new SinOscillator(5, 0.1);
 // Apply the modulation
 var modulatedSignal = carrier.ApplyModulator(modulator);
 
+// Or try the new square wave oscillators
+var digitalSquare = new DigitalSquareOscillator(220, 1.0);     // Clean digital square wave
+var analogSquare = new AnalogSquareOscillator(220, 1.0);      // Realistic analog square wave
+
 // Get values over time
 for (double time = 0; time < 1.0; time += 0.01)
 {
-    double value = modulatedSignal.GetValue(time);
-    Console.WriteLine($"Time: {time:F2}, Value: {value:F3}");
+    double sineValue = modulatedSignal.GetValue(time);
+    double digitalValue = digitalSquare.GetValue(time);
+    double analogValue = analogSquare.GetValue(time);
+    
+    Console.WriteLine($"Time: {time:F2}, Sine: {sineValue:F3}, Digital: {digitalValue:F3}, Analog: {analogValue:F3}");
 }
 ```
 
