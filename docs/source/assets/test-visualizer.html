@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waveform Visualizer Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .visualization {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .example-controls {
+            margin: 20px 0;
+            text-align: center;
+        }
+        button {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 4px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0052a3;
+        }
+        #currentExample {
+            margin: 10px 0;
+            font-weight: bold;
+            color: #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Modulator Library - Waveform Visualizer Test</h1>
+        
+        <div class="example-controls">
+            <div id="currentExample">Select an example to visualize</div>
+            <button onclick="loadExample('basic-sine')">Basic Sine</button>
+            <button onclick="loadExample('lfo')">LFO</button>
+            <button onclick="loadExample('digital-square')">Digital Square</button>
+            <button onclick="loadExample('analog-square')">Analog Square</button>
+            <button onclick="loadExample('vibrato')">Vibrato</button>
+            <button onclick="loadExample('simple-modulation')">Simple Modulation</button>
+            <button onclick="loadExample('multi-osc')">Multi-Oscillator</button>
+            <button onclick="loadExample('test-square')">Square Comparison</button>
+        </div>
+        
+        <div class="visualization">
+            <canvas id="waveformCanvas"></canvas>
+        </div>
+    </div>
+
+    <script src="waveform-visualizer.js"></script>
+    <script>
+        let visualizer;
+        
+        function initVisualizer() {
+            visualizer = new WaveformVisualizer('waveformCanvas', {
+                width: 800,
+                height: 400,
+                waveformColor: '#0066cc',
+                lineWidth: 2
+            });
+        }
+        
+        function loadExample(exampleName) {
+            const url = `samples/${exampleName}.json`;
+            document.getElementById('currentExample').textContent = `Loading: ${exampleName}...`;
+            
+            visualizer.loadData(url).then(() => {
+                document.getElementById('currentExample').textContent = `Current: ${exampleName}`;
+            }).catch(error => {
+                document.getElementById('currentExample').textContent = `Error loading: ${exampleName}`;
+                console.error('Error loading example:', error);
+            });
+        }
+        
+        // Initialize when page loads
+        window.onload = function() {
+            initVisualizer();
+            loadExample('basic-sine'); // Load default example
+        };
+    </script>
+</body>
+</html>

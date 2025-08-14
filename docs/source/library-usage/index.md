@@ -70,6 +70,10 @@ for (double t = 0; t < 1.0; t += 0.01)
 }
 ```
 
+<div class="waveform-visualization">
+    <canvas id="basicSineWaveCanvas" class="waveform-visualization" data-sample="basic-sine.json" width="800" height="300"></canvas>
+</div>
+
 #### Low Frequency Oscillator (LFO)
 ```csharp
 // Create a slow oscillator for modulation purposes
@@ -79,6 +83,10 @@ var lfo = new SinOscillator(2.5, 0.5); // 2.5Hz at 50% amplitude
 var carrier = new SinOscillator(440, 1.0);
 var modulated = carrier.ApplyModulator(lfo);
 ```
+
+<div class="waveform-visualization">
+    <canvas id="lfoCanvas" class="waveform-visualization" data-sample="lfo.json" width="800" height="300"></canvas>
+</div>
 
 ## DigitalSquareOscillator Class
 
@@ -115,6 +123,10 @@ for (double t = 0; t < 0.002; t += 0.0001) // 2ms worth of samples
     Console.WriteLine($"Time: {t:F4}s, Value: {value:F1}"); // Will print 0.0 or 1.0
 }
 ```
+
+<div class="waveform-visualization">
+    <canvas id="digitalSquareCanvas" class="waveform-visualization" data-sample="digital-square.json" width="800" height="300"></canvas>
+</div>
 
 #### Clock Signal Generation
 ```csharp
@@ -166,6 +178,10 @@ for (double t = 0; t < 0.01; t += 0.0001)
     Console.WriteLine($"Time: {t:F4}s, Value: {value:F6}");
 }
 ```
+
+<div class="waveform-visualization">
+    <canvas id="analogSquareCanvas" class="waveform-visualization" data-sample="analog-square.json" width="800" height="300"></canvas>
+</div>
 
 #### Custom Rise/Fall Times
 ```csharp
@@ -230,6 +246,10 @@ var modulated = new ModulatedSource(carrier, modulator);
 // Or equivalently:
 var modulated2 = carrier.ApplyModulator(modulator);
 ```
+
+<div class="waveform-visualization">
+    <canvas id="simpleModulationCanvas" class="waveform-visualization" data-sample="simple-modulation.json" width="800" height="300"></canvas>
+</div>
 
 #### Accessing Components
 ```csharp
@@ -409,6 +429,10 @@ public class MultiOscSynth
 }
 ```
 
+<div class="waveform-visualization">
+    <canvas id="multiOscCanvas" class="waveform-visualization" data-sample="multi-osc.json" width="800" height="300"></canvas>
+</div>
+
 ### Percussion Synthesis with Square Waves
 ```csharp
 public class DrumSynth
@@ -466,3 +490,22 @@ public class TestSignalGenerator
 ```
 
 This library provides a solid foundation for building more complex modulation systems while maintaining simplicity and performance.
+
+## Sample CLI and Visualizations
+
+All examples in this documentation can be generated and visualized using the included sample CLI application:
+
+```bash
+# Navigate to the source directory
+cd src
+
+# Generate waveform data for any example
+dotnet run --project ModulatorSampleCLI basic-sine output.json
+dotnet run --project ModulatorSampleCLI vibrato vibrato.json
+dotnet run --project ModulatorSampleCLI multi-osc multi-osc.json
+
+# List all available examples
+dotnet run --project ModulatorSampleCLI list
+```
+
+/script>

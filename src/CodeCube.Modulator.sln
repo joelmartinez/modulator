@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCube.Modulator", "CodeC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCube.Modulator.Tests", "CodeCube.Modulator.Tests\CodeCube.Modulator.Tests.csproj", "{A2ED974A-CCD8-48B5-8F84-41CAE8011445}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModulatorSampleCLI", "ModulatorSampleCLI\ModulatorSampleCLI.csproj", "{0289FE12-7027-4159-8607-255DA073C6F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{A2ED974A-CCD8-48B5-8F84-41CAE8011445}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2ED974A-CCD8-48B5-8F84-41CAE8011445}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2ED974A-CCD8-48B5-8F84-41CAE8011445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0289FE12-7027-4159-8607-255DA073C6F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0289FE12-7027-4159-8607-255DA073C6F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0289FE12-7027-4159-8607-255DA073C6F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0289FE12-7027-4159-8607-255DA073C6F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

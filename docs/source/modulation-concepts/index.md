@@ -38,6 +38,10 @@ var vibrato = new SinOscillator(6, 5); // 5Hz frequency deviation
 var vibratoNote = note.ApplyModulator(vibrato);
 ```
 
+<div class="waveform-visualization">
+    <canvas id="vibratoCanvas" class="waveform-visualization" data-sample="vibrato.json" width="800" height="300"></canvas>
+</div>
+
 #### Tremolo
 Tremolo modulates the amplitude of a signal, creating a "shaking" effect:
 ```csharp
@@ -130,3 +134,15 @@ Modulation opens up endless creative possibilities:
 - Use audio-rate modulators for FM synthesis effects
 - Apply multiple layers of modulation for evolving textures
 - Experiment with different modulator waveforms and frequencies
+
+## Try It Yourself
+
+Use the sample CLI to experiment with these concepts:
+
+```bash
+# Generate and visualize different modulation examples
+dotnet run --project ModulatorSampleCLI vibrato vibrato.json
+dotnet run --project ModulatorSampleCLI complex-mod complex.json
+dotnet run --project ModulatorSampleCLI test-square comparison.json
+```
+
