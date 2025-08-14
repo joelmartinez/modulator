@@ -60,8 +60,9 @@
         const canvases = document.querySelectorAll('canvas.waveform-visualization');
         
         // Get the base path for assets from a global variable we'll set
-        const assetsBasePath = '@Asset("/assets/samples/")';
-        
+        const assetsBasePath = '@Href("/assets/samples/")';
+        const assetCacheBust = Math.floor(Date.now() / (60 * 60 * 1000)).toString();
+
         canvases.forEach(canvas => {
             const sampleFile = canvas.dataset.sample;
             if (sampleFile && canvas.id) {
@@ -71,7 +72,7 @@
                         height: 300
                     });
                     // Use the assets base path with the sample file
-                    visualizer.loadData(assetsBasePath + sampleFile);
+                    visualizer.loadData(assetsBasePath + sampleFile + '&v=' + assetCacheBust);
                 } catch (error) {
                     console.error('Failed to initialize visualizer for canvas:', canvas.id, error);
                 }
