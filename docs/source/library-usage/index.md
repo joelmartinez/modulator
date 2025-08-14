@@ -85,7 +85,7 @@ var modulated = carrier.ApplyModulator(lfo);
 ```
 
 <div class="waveform-visualization">
-    <canvas id="lfoCanvas" width="800" height="300"></canvas>
+    <canvas id="lfoCanvas" class="waveform-visualization" data-sample="lfo.json" width="800" height="300"></canvas>
 </div>
 
 ## DigitalSquareOscillator Class
@@ -125,7 +125,7 @@ for (double t = 0; t < 0.002; t += 0.0001) // 2ms worth of samples
 ```
 
 <div class="waveform-visualization">
-    <canvas id="digitalSquareCanvas" width="800" height="300"></canvas>
+    <canvas id="digitalSquareCanvas" class="waveform-visualization" data-sample="digital-square.json" width="800" height="300"></canvas>
 </div>
 
 #### Clock Signal Generation
@@ -180,7 +180,7 @@ for (double t = 0; t < 0.01; t += 0.0001)
 ```
 
 <div class="waveform-visualization">
-    <canvas id="analogSquareCanvas" width="800" height="300"></canvas>
+    <canvas id="analogSquareCanvas" class="waveform-visualization" data-sample="analog-square.json" width="800" height="300"></canvas>
 </div>
 
 #### Custom Rise/Fall Times
@@ -248,7 +248,7 @@ var modulated2 = carrier.ApplyModulator(modulator);
 ```
 
 <div class="waveform-visualization">
-    <canvas id="simpleModulationCanvas" width="800" height="300"></canvas>
+    <canvas id="simpleModulationCanvas" class="waveform-visualization" data-sample="simple-modulation.json" width="800" height="300"></canvas>
 </div>
 
 #### Accessing Components
