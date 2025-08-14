@@ -1,11 +1,48 @@
 {
   "Name": "Digital Square Wave",
   "Description": "A clean 100Hz digital square wave with instantaneous transitions",
-  "Duration": 0.1,
-  "SampleRate": 1000,
+  "Duration": 0.03,
+  "SampleRate": 10000,
+  "Frequency": 100,
   "Samples": [
     {
       "Time": 0,
+      "Value": 1
+    },
+    {
+      "Time": 0.0001,
+      "Value": 1
+    },
+    {
+      "Time": 0.0002,
+      "Value": 1
+    },
+    {
+      "Time": 0.0003,
+      "Value": 1
+    },
+    {
+      "Time": 0.0004,
+      "Value": 1
+    },
+    {
+      "Time": 0.0005,
+      "Value": 1
+    },
+    {
+      "Time": 0.0006,
+      "Value": 1
+    },
+    {
+      "Time": 0.0007,
+      "Value": 1
+    },
+    {
+      "Time": 0.0008,
+      "Value": 1
+    },
+    {
+      "Time": 0.0009,
       "Value": 1
     },
     {
@@ -13,7 +50,79 @@
       "Value": 1
     },
     {
+      "Time": 0.0011,
+      "Value": 1
+    },
+    {
+      "Time": 0.0012,
+      "Value": 1
+    },
+    {
+      "Time": 0.0013,
+      "Value": 1
+    },
+    {
+      "Time": 0.0014,
+      "Value": 1
+    },
+    {
+      "Time": 0.0015,
+      "Value": 1
+    },
+    {
+      "Time": 0.0016,
+      "Value": 1
+    },
+    {
+      "Time": 0.0017,
+      "Value": 1
+    },
+    {
+      "Time": 0.0018,
+      "Value": 1
+    },
+    {
+      "Time": 0.0019,
+      "Value": 1
+    },
+    {
       "Time": 0.002,
+      "Value": 1
+    },
+    {
+      "Time": 0.0021,
+      "Value": 1
+    },
+    {
+      "Time": 0.0022,
+      "Value": 1
+    },
+    {
+      "Time": 0.0023,
+      "Value": 1
+    },
+    {
+      "Time": 0.0024,
+      "Value": 1
+    },
+    {
+      "Time": 0.0025,
+      "Value": 1
+    },
+    {
+      "Time": 0.0026,
+      "Value": 1
+    },
+    {
+      "Time": 0.0027,
+      "Value": 1
+    },
+    {
+      "Time": 0.0028,
+      "Value": 1
+    },
+    {
+      "Time": 0.0029,
       "Value": 1
     },
     {
@@ -21,7 +130,79 @@
       "Value": 1
     },
     {
+      "Time": 0.0031,
+      "Value": 1
+    },
+    {
+      "Time": 0.0032,
+      "Value": 1
+    },
+    {
+      "Time": 0.0033,
+      "Value": 1
+    },
+    {
+      "Time": 0.0034,
+      "Value": 1
+    },
+    {
+      "Time": 0.0035,
+      "Value": 1
+    },
+    {
+      "Time": 0.0036,
+      "Value": 1
+    },
+    {
+      "Time": 0.0037,
+      "Value": 1
+    },
+    {
+      "Time": 0.0038,
+      "Value": 1
+    },
+    {
+      "Time": 0.0039,
+      "Value": 1
+    },
+    {
       "Time": 0.004,
+      "Value": 1
+    },
+    {
+      "Time": 0.0041,
+      "Value": 1
+    },
+    {
+      "Time": 0.0042,
+      "Value": 1
+    },
+    {
+      "Time": 0.0043,
+      "Value": 1
+    },
+    {
+      "Time": 0.0044,
+      "Value": 1
+    },
+    {
+      "Time": 0.0045,
+      "Value": 1
+    },
+    {
+      "Time": 0.0046,
+      "Value": 1
+    },
+    {
+      "Time": 0.0047,
+      "Value": 1
+    },
+    {
+      "Time": 0.0048,
+      "Value": 1
+    },
+    {
+      "Time": 0.0049,
       "Value": 1
     },
     {
@@ -29,7 +210,79 @@
       "Value": 0
     },
     {
+      "Time": 0.0051,
+      "Value": 0
+    },
+    {
+      "Time": 0.0052,
+      "Value": 0
+    },
+    {
+      "Time": 0.0053,
+      "Value": 0
+    },
+    {
+      "Time": 0.0054,
+      "Value": 0
+    },
+    {
+      "Time": 0.0055,
+      "Value": 0
+    },
+    {
+      "Time": 0.0056,
+      "Value": 0
+    },
+    {
+      "Time": 0.0057,
+      "Value": 0
+    },
+    {
+      "Time": 0.0058,
+      "Value": 0
+    },
+    {
+      "Time": 0.0059,
+      "Value": 0
+    },
+    {
       "Time": 0.006,
+      "Value": 0
+    },
+    {
+      "Time": 0.0061,
+      "Value": 0
+    },
+    {
+      "Time": 0.0062,
+      "Value": 0
+    },
+    {
+      "Time": 0.0063,
+      "Value": 0
+    },
+    {
+      "Time": 0.0064,
+      "Value": 0
+    },
+    {
+      "Time": 0.0065,
+      "Value": 0
+    },
+    {
+      "Time": 0.0066,
+      "Value": 0
+    },
+    {
+      "Time": 0.0067,
+      "Value": 0
+    },
+    {
+      "Time": 0.0068,
+      "Value": 0
+    },
+    {
+      "Time": 0.0069,
       "Value": 0
     },
     {
@@ -37,7 +290,79 @@
       "Value": 0
     },
     {
+      "Time": 0.0071,
+      "Value": 0
+    },
+    {
+      "Time": 0.0072,
+      "Value": 0
+    },
+    {
+      "Time": 0.0073,
+      "Value": 0
+    },
+    {
+      "Time": 0.0074,
+      "Value": 0
+    },
+    {
+      "Time": 0.0075,
+      "Value": 0
+    },
+    {
+      "Time": 0.0076,
+      "Value": 0
+    },
+    {
+      "Time": 0.0077,
+      "Value": 0
+    },
+    {
+      "Time": 0.0078,
+      "Value": 0
+    },
+    {
+      "Time": 0.0079,
+      "Value": 0
+    },
+    {
       "Time": 0.008,
+      "Value": 0
+    },
+    {
+      "Time": 0.0081,
+      "Value": 0
+    },
+    {
+      "Time": 0.0082,
+      "Value": 0
+    },
+    {
+      "Time": 0.0083,
+      "Value": 0
+    },
+    {
+      "Time": 0.0084,
+      "Value": 0
+    },
+    {
+      "Time": 0.0085,
+      "Value": 0
+    },
+    {
+      "Time": 0.0086,
+      "Value": 0
+    },
+    {
+      "Time": 0.0087,
+      "Value": 0
+    },
+    {
+      "Time": 0.0088,
+      "Value": 0
+    },
+    {
+      "Time": 0.0089,
       "Value": 0
     },
     {
@@ -45,7 +370,79 @@
       "Value": 0
     },
     {
+      "Time": 0.0091,
+      "Value": 0
+    },
+    {
+      "Time": 0.0092,
+      "Value": 0
+    },
+    {
+      "Time": 0.0093,
+      "Value": 0
+    },
+    {
+      "Time": 0.0094,
+      "Value": 0
+    },
+    {
+      "Time": 0.0095,
+      "Value": 0
+    },
+    {
+      "Time": 0.0096,
+      "Value": 0
+    },
+    {
+      "Time": 0.0097,
+      "Value": 0
+    },
+    {
+      "Time": 0.0098,
+      "Value": 0
+    },
+    {
+      "Time": 0.0099,
+      "Value": 0
+    },
+    {
       "Time": 0.01,
+      "Value": 1
+    },
+    {
+      "Time": 0.0101,
+      "Value": 1
+    },
+    {
+      "Time": 0.0102,
+      "Value": 1
+    },
+    {
+      "Time": 0.0103,
+      "Value": 1
+    },
+    {
+      "Time": 0.0104,
+      "Value": 1
+    },
+    {
+      "Time": 0.0105,
+      "Value": 1
+    },
+    {
+      "Time": 0.0106,
+      "Value": 1
+    },
+    {
+      "Time": 0.0107,
+      "Value": 1
+    },
+    {
+      "Time": 0.0108,
+      "Value": 1
+    },
+    {
+      "Time": 0.0109,
       "Value": 1
     },
     {
@@ -53,7 +450,79 @@
       "Value": 1
     },
     {
+      "Time": 0.0111,
+      "Value": 1
+    },
+    {
+      "Time": 0.0112,
+      "Value": 1
+    },
+    {
+      "Time": 0.0113,
+      "Value": 1
+    },
+    {
+      "Time": 0.0114,
+      "Value": 1
+    },
+    {
+      "Time": 0.0115,
+      "Value": 1
+    },
+    {
+      "Time": 0.0116,
+      "Value": 1
+    },
+    {
+      "Time": 0.0117,
+      "Value": 1
+    },
+    {
+      "Time": 0.0118,
+      "Value": 1
+    },
+    {
+      "Time": 0.0119,
+      "Value": 1
+    },
+    {
       "Time": 0.012,
+      "Value": 1
+    },
+    {
+      "Time": 0.0121,
+      "Value": 1
+    },
+    {
+      "Time": 0.0122,
+      "Value": 1
+    },
+    {
+      "Time": 0.0123,
+      "Value": 1
+    },
+    {
+      "Time": 0.0124,
+      "Value": 1
+    },
+    {
+      "Time": 0.0125,
+      "Value": 1
+    },
+    {
+      "Time": 0.0126,
+      "Value": 1
+    },
+    {
+      "Time": 0.0127,
+      "Value": 1
+    },
+    {
+      "Time": 0.0128,
+      "Value": 1
+    },
+    {
+      "Time": 0.0129,
       "Value": 1
     },
     {
@@ -61,7 +530,79 @@
       "Value": 1
     },
     {
+      "Time": 0.0131,
+      "Value": 1
+    },
+    {
+      "Time": 0.0132,
+      "Value": 1
+    },
+    {
+      "Time": 0.0133,
+      "Value": 1
+    },
+    {
+      "Time": 0.0134,
+      "Value": 1
+    },
+    {
+      "Time": 0.0135,
+      "Value": 1
+    },
+    {
+      "Time": 0.0136,
+      "Value": 1
+    },
+    {
+      "Time": 0.0137,
+      "Value": 1
+    },
+    {
+      "Time": 0.0138,
+      "Value": 1
+    },
+    {
+      "Time": 0.0139,
+      "Value": 1
+    },
+    {
       "Time": 0.014,
+      "Value": 1
+    },
+    {
+      "Time": 0.0141,
+      "Value": 1
+    },
+    {
+      "Time": 0.0142,
+      "Value": 1
+    },
+    {
+      "Time": 0.0143,
+      "Value": 1
+    },
+    {
+      "Time": 0.0144,
+      "Value": 1
+    },
+    {
+      "Time": 0.0145,
+      "Value": 1
+    },
+    {
+      "Time": 0.0146,
+      "Value": 1
+    },
+    {
+      "Time": 0.0147,
+      "Value": 1
+    },
+    {
+      "Time": 0.0148,
+      "Value": 1
+    },
+    {
+      "Time": 0.0149,
       "Value": 1
     },
     {
@@ -69,7 +610,79 @@
       "Value": 0
     },
     {
+      "Time": 0.0151,
+      "Value": 0
+    },
+    {
+      "Time": 0.0152,
+      "Value": 0
+    },
+    {
+      "Time": 0.0153,
+      "Value": 0
+    },
+    {
+      "Time": 0.0154,
+      "Value": 0
+    },
+    {
+      "Time": 0.0155,
+      "Value": 0
+    },
+    {
+      "Time": 0.0156,
+      "Value": 0
+    },
+    {
+      "Time": 0.0157,
+      "Value": 0
+    },
+    {
+      "Time": 0.0158,
+      "Value": 0
+    },
+    {
+      "Time": 0.0159,
+      "Value": 0
+    },
+    {
       "Time": 0.016,
+      "Value": 0
+    },
+    {
+      "Time": 0.0161,
+      "Value": 0
+    },
+    {
+      "Time": 0.0162,
+      "Value": 0
+    },
+    {
+      "Time": 0.0163,
+      "Value": 0
+    },
+    {
+      "Time": 0.0164,
+      "Value": 0
+    },
+    {
+      "Time": 0.0165,
+      "Value": 0
+    },
+    {
+      "Time": 0.0166,
+      "Value": 0
+    },
+    {
+      "Time": 0.0167,
+      "Value": 0
+    },
+    {
+      "Time": 0.0168,
+      "Value": 0
+    },
+    {
+      "Time": 0.0169,
       "Value": 0
     },
     {
@@ -77,7 +690,79 @@
       "Value": 0
     },
     {
+      "Time": 0.0171,
+      "Value": 0
+    },
+    {
+      "Time": 0.0172,
+      "Value": 0
+    },
+    {
+      "Time": 0.0173,
+      "Value": 0
+    },
+    {
+      "Time": 0.0174,
+      "Value": 0
+    },
+    {
+      "Time": 0.0175,
+      "Value": 0
+    },
+    {
+      "Time": 0.0176,
+      "Value": 0
+    },
+    {
+      "Time": 0.0177,
+      "Value": 0
+    },
+    {
+      "Time": 0.0178,
+      "Value": 0
+    },
+    {
+      "Time": 0.0179,
+      "Value": 0
+    },
+    {
       "Time": 0.018,
+      "Value": 0
+    },
+    {
+      "Time": 0.0181,
+      "Value": 0
+    },
+    {
+      "Time": 0.0182,
+      "Value": 0
+    },
+    {
+      "Time": 0.0183,
+      "Value": 0
+    },
+    {
+      "Time": 0.0184,
+      "Value": 0
+    },
+    {
+      "Time": 0.0185,
+      "Value": 0
+    },
+    {
+      "Time": 0.0186,
+      "Value": 0
+    },
+    {
+      "Time": 0.0187,
+      "Value": 0
+    },
+    {
+      "Time": 0.0188,
+      "Value": 0
+    },
+    {
+      "Time": 0.0189,
       "Value": 0
     },
     {
@@ -85,7 +770,79 @@
       "Value": 0
     },
     {
+      "Time": 0.0191,
+      "Value": 0
+    },
+    {
+      "Time": 0.0192,
+      "Value": 0
+    },
+    {
+      "Time": 0.0193,
+      "Value": 0
+    },
+    {
+      "Time": 0.0194,
+      "Value": 0
+    },
+    {
+      "Time": 0.0195,
+      "Value": 0
+    },
+    {
+      "Time": 0.0196,
+      "Value": 0
+    },
+    {
+      "Time": 0.0197,
+      "Value": 0
+    },
+    {
+      "Time": 0.0198,
+      "Value": 0
+    },
+    {
+      "Time": 0.0199,
+      "Value": 0
+    },
+    {
       "Time": 0.02,
+      "Value": 1
+    },
+    {
+      "Time": 0.0201,
+      "Value": 1
+    },
+    {
+      "Time": 0.0202,
+      "Value": 1
+    },
+    {
+      "Time": 0.0203,
+      "Value": 1
+    },
+    {
+      "Time": 0.0204,
+      "Value": 1
+    },
+    {
+      "Time": 0.0205,
+      "Value": 1
+    },
+    {
+      "Time": 0.0206,
+      "Value": 1
+    },
+    {
+      "Time": 0.0207,
+      "Value": 1
+    },
+    {
+      "Time": 0.0208,
+      "Value": 1
+    },
+    {
+      "Time": 0.0209,
       "Value": 1
     },
     {
@@ -93,7 +850,79 @@
       "Value": 1
     },
     {
+      "Time": 0.0211,
+      "Value": 1
+    },
+    {
+      "Time": 0.0212,
+      "Value": 1
+    },
+    {
+      "Time": 0.0213,
+      "Value": 1
+    },
+    {
+      "Time": 0.0214,
+      "Value": 1
+    },
+    {
+      "Time": 0.0215,
+      "Value": 1
+    },
+    {
+      "Time": 0.0216,
+      "Value": 1
+    },
+    {
+      "Time": 0.0217,
+      "Value": 1
+    },
+    {
+      "Time": 0.0218,
+      "Value": 1
+    },
+    {
+      "Time": 0.0219,
+      "Value": 1
+    },
+    {
       "Time": 0.022,
+      "Value": 1
+    },
+    {
+      "Time": 0.0221,
+      "Value": 1
+    },
+    {
+      "Time": 0.0222,
+      "Value": 1
+    },
+    {
+      "Time": 0.0223,
+      "Value": 1
+    },
+    {
+      "Time": 0.0224,
+      "Value": 1
+    },
+    {
+      "Time": 0.0225,
+      "Value": 1
+    },
+    {
+      "Time": 0.0226,
+      "Value": 1
+    },
+    {
+      "Time": 0.0227,
+      "Value": 1
+    },
+    {
+      "Time": 0.0228,
+      "Value": 1
+    },
+    {
+      "Time": 0.0229,
       "Value": 1
     },
     {
@@ -101,7 +930,79 @@
       "Value": 1
     },
     {
+      "Time": 0.0231,
+      "Value": 1
+    },
+    {
+      "Time": 0.0232,
+      "Value": 1
+    },
+    {
+      "Time": 0.0233,
+      "Value": 1
+    },
+    {
+      "Time": 0.0234,
+      "Value": 1
+    },
+    {
+      "Time": 0.0235,
+      "Value": 1
+    },
+    {
+      "Time": 0.0236,
+      "Value": 1
+    },
+    {
+      "Time": 0.0237,
+      "Value": 1
+    },
+    {
+      "Time": 0.0238,
+      "Value": 1
+    },
+    {
+      "Time": 0.0239,
+      "Value": 1
+    },
+    {
       "Time": 0.024,
+      "Value": 1
+    },
+    {
+      "Time": 0.0241,
+      "Value": 1
+    },
+    {
+      "Time": 0.0242,
+      "Value": 1
+    },
+    {
+      "Time": 0.0243,
+      "Value": 1
+    },
+    {
+      "Time": 0.0244,
+      "Value": 1
+    },
+    {
+      "Time": 0.0245,
+      "Value": 1
+    },
+    {
+      "Time": 0.0246,
+      "Value": 1
+    },
+    {
+      "Time": 0.0247,
+      "Value": 1
+    },
+    {
+      "Time": 0.0248,
+      "Value": 1
+    },
+    {
+      "Time": 0.0249,
       "Value": 1
     },
     {
@@ -109,7 +1010,79 @@
       "Value": 0
     },
     {
+      "Time": 0.0251,
+      "Value": 0
+    },
+    {
+      "Time": 0.0252,
+      "Value": 0
+    },
+    {
+      "Time": 0.0253,
+      "Value": 0
+    },
+    {
+      "Time": 0.0254,
+      "Value": 0
+    },
+    {
+      "Time": 0.0255,
+      "Value": 0
+    },
+    {
+      "Time": 0.0256,
+      "Value": 0
+    },
+    {
+      "Time": 0.0257,
+      "Value": 0
+    },
+    {
+      "Time": 0.0258,
+      "Value": 0
+    },
+    {
+      "Time": 0.0259,
+      "Value": 0
+    },
+    {
       "Time": 0.026,
+      "Value": 0
+    },
+    {
+      "Time": 0.0261,
+      "Value": 0
+    },
+    {
+      "Time": 0.0262,
+      "Value": 0
+    },
+    {
+      "Time": 0.0263,
+      "Value": 0
+    },
+    {
+      "Time": 0.0264,
+      "Value": 0
+    },
+    {
+      "Time": 0.0265,
+      "Value": 0
+    },
+    {
+      "Time": 0.0266,
+      "Value": 0
+    },
+    {
+      "Time": 0.0267,
+      "Value": 0
+    },
+    {
+      "Time": 0.0268,
+      "Value": 0
+    },
+    {
+      "Time": 0.0269,
       "Value": 0
     },
     {
@@ -117,7 +1090,79 @@
       "Value": 0
     },
     {
+      "Time": 0.0271,
+      "Value": 0
+    },
+    {
+      "Time": 0.0272,
+      "Value": 0
+    },
+    {
+      "Time": 0.0273,
+      "Value": 0
+    },
+    {
+      "Time": 0.0274,
+      "Value": 0
+    },
+    {
+      "Time": 0.0275,
+      "Value": 0
+    },
+    {
+      "Time": 0.0276,
+      "Value": 0
+    },
+    {
+      "Time": 0.0277,
+      "Value": 0
+    },
+    {
+      "Time": 0.0278,
+      "Value": 0
+    },
+    {
+      "Time": 0.0279,
+      "Value": 0
+    },
+    {
       "Time": 0.028,
+      "Value": 0
+    },
+    {
+      "Time": 0.0281,
+      "Value": 0
+    },
+    {
+      "Time": 0.0282,
+      "Value": 0
+    },
+    {
+      "Time": 0.0283,
+      "Value": 0
+    },
+    {
+      "Time": 0.0284,
+      "Value": 0
+    },
+    {
+      "Time": 0.0285,
+      "Value": 0
+    },
+    {
+      "Time": 0.0286,
+      "Value": 0
+    },
+    {
+      "Time": 0.0287,
+      "Value": 0
+    },
+    {
+      "Time": 0.0288,
+      "Value": 0
+    },
+    {
+      "Time": 0.0289,
       "Value": 0
     },
     {
@@ -125,283 +1170,39 @@
       "Value": 0
     },
     {
-      "Time": 0.03,
-      "Value": 1
-    },
-    {
-      "Time": 0.031,
-      "Value": 1
-    },
-    {
-      "Time": 0.032,
-      "Value": 1
-    },
-    {
-      "Time": 0.033,
-      "Value": 1
-    },
-    {
-      "Time": 0.034,
-      "Value": 1
-    },
-    {
-      "Time": 0.035,
+      "Time": 0.0291,
       "Value": 0
     },
     {
-      "Time": 0.036,
+      "Time": 0.0292,
       "Value": 0
     },
     {
-      "Time": 0.037,
+      "Time": 0.0293,
       "Value": 0
     },
     {
-      "Time": 0.038,
+      "Time": 0.0294,
       "Value": 0
     },
     {
-      "Time": 0.039,
+      "Time": 0.0295,
       "Value": 0
     },
     {
-      "Time": 0.04,
-      "Value": 1
-    },
-    {
-      "Time": 0.041,
-      "Value": 1
-    },
-    {
-      "Time": 0.042,
-      "Value": 1
-    },
-    {
-      "Time": 0.043,
-      "Value": 1
-    },
-    {
-      "Time": 0.044,
-      "Value": 1
-    },
-    {
-      "Time": 0.045,
+      "Time": 0.0296,
       "Value": 0
     },
     {
-      "Time": 0.046,
+      "Time": 0.0297,
       "Value": 0
     },
     {
-      "Time": 0.047,
+      "Time": 0.0298,
       "Value": 0
     },
     {
-      "Time": 0.048,
-      "Value": 0
-    },
-    {
-      "Time": 0.049,
-      "Value": 0
-    },
-    {
-      "Time": 0.05,
-      "Value": 1
-    },
-    {
-      "Time": 0.051,
-      "Value": 1
-    },
-    {
-      "Time": 0.052,
-      "Value": 1
-    },
-    {
-      "Time": 0.053,
-      "Value": 1
-    },
-    {
-      "Time": 0.054,
-      "Value": 1
-    },
-    {
-      "Time": 0.055,
-      "Value": 0
-    },
-    {
-      "Time": 0.056,
-      "Value": 0
-    },
-    {
-      "Time": 0.057,
-      "Value": 0
-    },
-    {
-      "Time": 0.058,
-      "Value": 0
-    },
-    {
-      "Time": 0.059,
-      "Value": 0
-    },
-    {
-      "Time": 0.06,
-      "Value": 1
-    },
-    {
-      "Time": 0.061,
-      "Value": 1
-    },
-    {
-      "Time": 0.062,
-      "Value": 1
-    },
-    {
-      "Time": 0.063,
-      "Value": 1
-    },
-    {
-      "Time": 0.064,
-      "Value": 1
-    },
-    {
-      "Time": 0.065,
-      "Value": 0
-    },
-    {
-      "Time": 0.066,
-      "Value": 0
-    },
-    {
-      "Time": 0.067,
-      "Value": 0
-    },
-    {
-      "Time": 0.068,
-      "Value": 0
-    },
-    {
-      "Time": 0.069,
-      "Value": 0
-    },
-    {
-      "Time": 0.07,
-      "Value": 1
-    },
-    {
-      "Time": 0.071,
-      "Value": 1
-    },
-    {
-      "Time": 0.072,
-      "Value": 1
-    },
-    {
-      "Time": 0.073,
-      "Value": 1
-    },
-    {
-      "Time": 0.074,
-      "Value": 1
-    },
-    {
-      "Time": 0.075,
-      "Value": 0
-    },
-    {
-      "Time": 0.076,
-      "Value": 0
-    },
-    {
-      "Time": 0.077,
-      "Value": 0
-    },
-    {
-      "Time": 0.078,
-      "Value": 0
-    },
-    {
-      "Time": 0.079,
-      "Value": 0
-    },
-    {
-      "Time": 0.08,
-      "Value": 1
-    },
-    {
-      "Time": 0.081,
-      "Value": 1
-    },
-    {
-      "Time": 0.082,
-      "Value": 1
-    },
-    {
-      "Time": 0.083,
-      "Value": 1
-    },
-    {
-      "Time": 0.084,
-      "Value": 1
-    },
-    {
-      "Time": 0.085,
-      "Value": 0
-    },
-    {
-      "Time": 0.086,
-      "Value": 0
-    },
-    {
-      "Time": 0.087,
-      "Value": 0
-    },
-    {
-      "Time": 0.088,
-      "Value": 0
-    },
-    {
-      "Time": 0.089,
-      "Value": 0
-    },
-    {
-      "Time": 0.09,
-      "Value": 1
-    },
-    {
-      "Time": 0.091,
-      "Value": 1
-    },
-    {
-      "Time": 0.092,
-      "Value": 1
-    },
-    {
-      "Time": 0.093,
-      "Value": 1
-    },
-    {
-      "Time": 0.094,
-      "Value": 1
-    },
-    {
-      "Time": 0.095,
-      "Value": 0
-    },
-    {
-      "Time": 0.096,
-      "Value": 0
-    },
-    {
-      "Time": 0.097,
-      "Value": 0
-    },
-    {
-      "Time": 0.098,
-      "Value": 0
-    },
-    {
-      "Time": 0.099,
+      "Time": 0.0299,
       "Value": 0
     }
   ]

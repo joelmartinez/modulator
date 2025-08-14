@@ -232,11 +232,16 @@ class WaveformVisualizer {
         this.ctx.textAlign = 'center';
         this.ctx.fillText(this.data.Name, this.canvas.width / 2, 16);
         
-        // Description
+        // Description - positioned to avoid overlap
         if (this.data.Description) {
             this.ctx.font = '12px Arial';
             this.ctx.fillStyle = '#666666';
-            this.ctx.fillText(this.data.Description, this.canvas.width / 2, drawArea.top - 5);
+            // Check if description would overlap with title, if so move it lower
+            const titleWidth = this.ctx.measureText(this.data.Name).width;
+            const descriptionWidth = this.ctx.measureText(this.data.Description).width;
+            const yPosition = titleWidth + descriptionWidth > this.canvas.width * 0.8 ? 
+                              drawArea.top - 5 : 32; // Move below title if would overlap
+            this.ctx.fillText(this.data.Description, this.canvas.width / 2, yPosition);
         }
         
         // Info text
@@ -244,6 +249,59 @@ class WaveformVisualizer {
         this.ctx.textAlign = 'right';
         const info = `Duration: ${this.data.Duration}s, Sample Rate: ${this.data.SampleRate}Hz, Samples: ${this.data.Samples.length}`;
         this.ctx.fillText(info, this.canvas.width - 10, this.canvas.height - 5);
+        
+        // Draw cycle indicators if frequency data is available
+        if (this.data.Frequency && this.data.Duration < 0.5) { // Only for short durations that show cycles
+            this.drawCycleIndicators(drawArea);
+        }
+    }
+    
+    drawCycleIndicators(drawArea) {
+        if (!this.data.Frequency) return;
+        
+        const minTime = this.data.Samples[0].Time;
+        const maxTime = this.data.Samples[this.data.Samples.length - 1].Time;
+        const cyclePeriod = 1.0 / this.data.Frequency;
+        
+        // Calculate middle cycle boundaries
+        const totalDuration = maxTime - minTime;
+        const middleTime = minTime + totalDuration / 2;
+        const middleCycleStart = middleTime - cyclePeriod / 2;
+        const middleCycleEnd = middleTime + cyclePeriod / 2;
+        
+        // Convert to screen coordinates
+        const startX = drawArea.left + (middleCycleStart - minTime) / (maxTime - minTime) * drawArea.width;
+        const endX = drawArea.left + (middleCycleEnd - minTime) / (maxTime - minTime) * drawArea.width;
+        
+        // Draw cycle indicator background
+        this.ctx.fillStyle = 'rgba(255, 255, 0, 0.1)'; // Light yellow highlight
+        this.ctx.fillRect(startX, drawArea.top, endX - startX, drawArea.height);
+        
+        // Draw cycle boundary lines
+        this.ctx.strokeStyle = 'rgba(255, 165, 0, 0.8)'; // Orange lines
+        this.ctx.lineWidth = 2;
+        this.ctx.setLineDash([5, 5]);
+        
+        // Start of cycle
+        this.ctx.beginPath();
+        this.ctx.moveTo(startX, drawArea.top);
+        this.ctx.lineTo(startX, drawArea.top + drawArea.height);
+        this.ctx.stroke();
+        
+        // End of cycle
+        this.ctx.beginPath();
+        this.ctx.moveTo(endX, drawArea.top);
+        this.ctx.lineTo(endX, drawArea.top + drawArea.height);
+        this.ctx.stroke();
+        
+        this.ctx.setLineDash([]); // Reset line dash
+        
+        // Add cycle label
+        this.ctx.font = '11px Arial';
+        this.ctx.fillStyle = '#ff6600';
+        this.ctx.textAlign = 'center';
+        const labelX = (startX + endX) / 2;
+        this.ctx.fillText('1 Cycle', labelX, drawArea.top - 10);
     }
 }
 
