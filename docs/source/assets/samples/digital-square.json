@@ -1,0 +1,408 @@
+{
+  "Name": "Digital Square Wave",
+  "Description": "A clean 100Hz digital square wave with instantaneous transitions",
+  "Duration": 0.1,
+  "SampleRate": 1000,
+  "Samples": [
+    {
+      "Time": 0,
+      "Value": 1
+    },
+    {
+      "Time": 0.001,
+      "Value": 1
+    },
+    {
+      "Time": 0.002,
+      "Value": 1
+    },
+    {
+      "Time": 0.003,
+      "Value": 1
+    },
+    {
+      "Time": 0.004,
+      "Value": 1
+    },
+    {
+      "Time": 0.005,
+      "Value": 0
+    },
+    {
+      "Time": 0.006,
+      "Value": 0
+    },
+    {
+      "Time": 0.007,
+      "Value": 0
+    },
+    {
+      "Time": 0.008,
+      "Value": 0
+    },
+    {
+      "Time": 0.009,
+      "Value": 0
+    },
+    {
+      "Time": 0.01,
+      "Value": 1
+    },
+    {
+      "Time": 0.011,
+      "Value": 1
+    },
+    {
+      "Time": 0.012,
+      "Value": 1
+    },
+    {
+      "Time": 0.013,
+      "Value": 1
+    },
+    {
+      "Time": 0.014,
+      "Value": 1
+    },
+    {
+      "Time": 0.015,
+      "Value": 0
+    },
+    {
+      "Time": 0.016,
+      "Value": 0
+    },
+    {
+      "Time": 0.017,
+      "Value": 0
+    },
+    {
+      "Time": 0.018,
+      "Value": 0
+    },
+    {
+      "Time": 0.019,
+      "Value": 0
+    },
+    {
+      "Time": 0.02,
+      "Value": 1
+    },
+    {
+      "Time": 0.021,
+      "Value": 1
+    },
+    {
+      "Time": 0.022,
+      "Value": 1
+    },
+    {
+      "Time": 0.023,
+      "Value": 1
+    },
+    {
+      "Time": 0.024,
+      "Value": 1
+    },
+    {
+      "Time": 0.025,
+      "Value": 0
+    },
+    {
+      "Time": 0.026,
+      "Value": 0
+    },
+    {
+      "Time": 0.027,
+      "Value": 0
+    },
+    {
+      "Time": 0.028,
+      "Value": 0
+    },
+    {
+      "Time": 0.029,
+      "Value": 0
+    },
+    {
+      "Time": 0.03,
+      "Value": 1
+    },
+    {
+      "Time": 0.031,
+      "Value": 1
+    },
+    {
+      "Time": 0.032,
+      "Value": 1
+    },
+    {
+      "Time": 0.033,
+      "Value": 1
+    },
+    {
+      "Time": 0.034,
+      "Value": 1
+    },
+    {
+      "Time": 0.035,
+      "Value": 0
+    },
+    {
+      "Time": 0.036,
+      "Value": 0
+    },
+    {
+      "Time": 0.037,
+      "Value": 0
+    },
+    {
+      "Time": 0.038,
+      "Value": 0
+    },
+    {
+      "Time": 0.039,
+      "Value": 0
+    },
+    {
+      "Time": 0.04,
+      "Value": 1
+    },
+    {
+      "Time": 0.041,
+      "Value": 1
+    },
+    {
+      "Time": 0.042,
+      "Value": 1
+    },
+    {
+      "Time": 0.043,
+      "Value": 1
+    },
+    {
+      "Time": 0.044,
+      "Value": 1
+    },
+    {
+      "Time": 0.045,
+      "Value": 0
+    },
+    {
+      "Time": 0.046,
+      "Value": 0
+    },
+    {
+      "Time": 0.047,
+      "Value": 0
+    },
+    {
+      "Time": 0.048,
+      "Value": 0
+    },
+    {
+      "Time": 0.049,
+      "Value": 0
+    },
+    {
+      "Time": 0.05,
+      "Value": 1
+    },
+    {
+      "Time": 0.051,
+      "Value": 1
+    },
+    {
+      "Time": 0.052,
+      "Value": 1
+    },
+    {
+      "Time": 0.053,
+      "Value": 1
+    },
+    {
+      "Time": 0.054,
+      "Value": 1
+    },
+    {
+      "Time": 0.055,
+      "Value": 0
+    },
+    {
+      "Time": 0.056,
+      "Value": 0
+    },
+    {
+      "Time": 0.057,
+      "Value": 0
+    },
+    {
+      "Time": 0.058,
+      "Value": 0
+    },
+    {
+      "Time": 0.059,
+      "Value": 0
+    },
+    {
+      "Time": 0.06,
+      "Value": 1
+    },
+    {
+      "Time": 0.061,
+      "Value": 1
+    },
+    {
+      "Time": 0.062,
+      "Value": 1
+    },
+    {
+      "Time": 0.063,
+      "Value": 1
+    },
+    {
+      "Time": 0.064,
+      "Value": 1
+    },
+    {
+      "Time": 0.065,
+      "Value": 0
+    },
+    {
+      "Time": 0.066,
+      "Value": 0
+    },
+    {
+      "Time": 0.067,
+      "Value": 0
+    },
+    {
+      "Time": 0.068,
+      "Value": 0
+    },
+    {
+      "Time": 0.069,
+      "Value": 0
+    },
+    {
+      "Time": 0.07,
+      "Value": 1
+    },
+    {
+      "Time": 0.071,
+      "Value": 1
+    },
+    {
+      "Time": 0.072,
+      "Value": 1
+    },
+    {
+      "Time": 0.073,
+      "Value": 1
+    },
+    {
+      "Time": 0.074,
+      "Value": 1
+    },
+    {
+      "Time": 0.075,
+      "Value": 0
+    },
+    {
+      "Time": 0.076,
+      "Value": 0
+    },
+    {
+      "Time": 0.077,
+      "Value": 0
+    },
+    {
+      "Time": 0.078,
+      "Value": 0
+    },
+    {
+      "Time": 0.079,
+      "Value": 0
+    },
+    {
+      "Time": 0.08,
+      "Value": 1
+    },
+    {
+      "Time": 0.081,
+      "Value": 1
+    },
+    {
+      "Time": 0.082,
+      "Value": 1
+    },
+    {
+      "Time": 0.083,
+      "Value": 1
+    },
+    {
+      "Time": 0.084,
+      "Value": 1
+    },
+    {
+      "Time": 0.085,
+      "Value": 0
+    },
+    {
+      "Time": 0.086,
+      "Value": 0
+    },
+    {
+      "Time": 0.087,
+      "Value": 0
+    },
+    {
+      "Time": 0.088,
+      "Value": 0
+    },
+    {
+      "Time": 0.089,
+      "Value": 0
+    },
+    {
+      "Time": 0.09,
+      "Value": 1
+    },
+    {
+      "Time": 0.091,
+      "Value": 1
+    },
+    {
+      "Time": 0.092,
+      "Value": 1
+    },
+    {
+      "Time": 0.093,
+      "Value": 1
+    },
+    {
+      "Time": 0.094,
+      "Value": 1
+    },
+    {
+      "Time": 0.095,
+      "Value": 0
+    },
+    {
+      "Time": 0.096,
+      "Value": 0
+    },
+    {
+      "Time": 0.097,
+      "Value": 0
+    },
+    {
+      "Time": 0.098,
+      "Value": 0
+    },
+    {
+      "Time": 0.099,
+      "Value": 0
+    }
+  ]
+}

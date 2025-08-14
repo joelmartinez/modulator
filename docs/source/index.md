@@ -52,6 +52,38 @@ for (double time = 0; time < 1.0; time += 0.01)
 }
 ```
 
+### Visualizations
+
+You can generate waveform data and visualize these examples using the sample CLI:
+
+```bash
+# Generate data for visualization
+dotnet run --project ModulatorSampleCLI basic-sine output.json
+```
+
+<div class="waveform-demo">
+    <h4>Basic Sine Wave (440Hz)</h4>
+    <canvas id="basicSineCanvas" width="800" height="300"></canvas>
+    
+    <h4>Simple Modulation (440Hz carrier + 5Hz modulator)</h4>
+    <canvas id="simpleModCanvas" width="800" height="300"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Create visualizers for the examples
+    const basicSineViz = new WaveformVisualizer('basicSineCanvas', {
+        width: 800, height: 300
+    });
+    basicSineViz.loadData('/assets/samples/basic-sine.json');
+    
+    const modViz = new WaveformVisualizer('simpleModCanvas', {
+        width: 800, height: 300
+    });
+    modViz.loadData('/assets/samples/simple-modulation.json');
+});
+</script>
+
 ## Explore the Documentation
 
 - [Understanding Modulation](/modulation-concepts) - Learn about modulation theory and applications
