@@ -72,7 +72,7 @@
                         height: 300
                     });
                     // Use the assets base path with the sample file
-                    visualizer.loadData(assetsBasePath + sampleFile + '&v=' + assetCacheBust);
+                    visualizer.loadData(assetsBasePath + sampleFile + '?v=' + assetCacheBust);
                 } catch (error) {
                     console.error('Failed to initialize visualizer for canvas:', canvas.id, error);
                 }
