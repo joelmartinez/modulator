@@ -12,6 +12,7 @@ public class WaveformData
     public string Description { get; set; } = string.Empty;
     public double Duration { get; set; }
     public double SampleRate { get; set; }
+    public double? Frequency { get; set; } // Fundamental frequency for cycle detection
     public List<WaveformSample> Samples { get; set; } = new();
 }
 
@@ -159,14 +160,24 @@ class Program
     }
     
     static WaveformData GenerateWaveformData(IModulationSource source, string name, string description, 
-                                           double duration = DefaultDuration, double sampleRate = DefaultSampleRate)
+                                           double duration = DefaultDuration, double sampleRate = DefaultSampleRate, double? frequency = null)
     {
+        // For high-frequency oscillators, show only 3 cycles to avoid dense visualization
+        if (frequency.HasValue && frequency.Value > 50) // Above 50Hz, limit to 3 cycles
+        {
+            duration = 3.0 / frequency.Value; // 3 cycles worth of data
+            // Ensure adequate sampling for visualization (at least 100 samples per cycle)
+            double minSampleRate = frequency.Value * 100;
+            sampleRate = Math.Max(sampleRate, minSampleRate);
+        }
+        
         var data = new WaveformData
         {
             Name = name,
             Description = description,
             Duration = duration,
-            SampleRate = sampleRate
+            SampleRate = sampleRate,
+            Frequency = frequency
         };
         
         int sampleCount = (int)(duration * sampleRate);
@@ -187,7 +198,7 @@ class Program
         var oscillator = new SinOscillator(440, 1.0);
         
         return GenerateWaveformData(oscillator, "Basic Sine Wave", 
-            "A simple 440Hz sine wave with amplitude 1.0");
+            "A simple 440Hz sine wave with amplitude 1.0", frequency: 440);
     }
     
     static WaveformData LFOExample()
@@ -196,7 +207,7 @@ class Program
         var lfo = new SinOscillator(2.5, 0.5); // 2.5Hz at 50% amplitude
         
         return GenerateWaveformData(lfo, "Low Frequency Oscillator", 
-            "A 2.5Hz LFO with 50% amplitude for modulation purposes", 2.0);
+            "A 2.5Hz LFO with 50% amplitude for modulation purposes", 2.0, frequency: 2.5);
     }
     
     static WaveformData DigitalSquareExample()
@@ -205,7 +216,7 @@ class Program
         var digitalSquare = new DigitalSquareOscillator(100, 1.0);
         
         return GenerateWaveformData(digitalSquare, "Digital Square Wave", 
-            "A clean 100Hz digital square wave with instantaneous transitions", 0.1);
+            "A clean 100Hz digital square wave with instantaneous transitions", frequency: 100);
     }
     
     static WaveformData ClockSignalExample()
@@ -214,7 +225,7 @@ class Program
         var clockSignal = new DigitalSquareOscillator(10, 3.3); // 10Hz, 3.3V logic level
         
         return GenerateWaveformData(clockSignal, "Clock Signal", 
-            "A 10Hz clock signal at 3.3V logic level", 1.0);
+            "A 10Hz clock signal at 3.3V logic level", 1.0, frequency: 10);
     }
     
     static WaveformData AnalogSquareExample()
@@ -223,7 +234,7 @@ class Program
         var analogSquare = new AnalogSquareOscillator(100, 1.0);
         
         return GenerateWaveformData(analogSquare, "Analog Square Wave", 
-            "A 100Hz analog square wave with realistic transitions and characteristics", 0.1);
+            "A 100Hz analog square wave with realistic transitions and characteristics", frequency: 100);
     }
     
     static WaveformData CustomAnalogExample()
@@ -258,7 +269,7 @@ class Program
         var modulated = carrier.ApplyModulator(modulator);
         
         return GenerateWaveformData(modulated, "Simple Modulation", 
-            "440Hz sine wave modulated by 5Hz oscillator", 2.0);
+            "440Hz sine wave modulated by 5Hz oscillator", frequency: 440);
     }
     
     static WaveformData VibratoExample()
@@ -272,7 +283,7 @@ class Program
         var vibratoNote = note.ApplyModulator(vibrato);
         
         return GenerateWaveformData(vibratoNote, "Vibrato Effect", 
-            "440Hz note with 6Hz vibrato effect", 2.0);
+            "440Hz note with 6Hz vibrato effect", frequency: 440);
     }
     
     static WaveformData TremoloExample()
@@ -381,7 +392,7 @@ class Program
         var voice = carrier.ApplyModulator(vibrato).ApplyModulator(tremolo);
         
         return GenerateWaveformData(voice, "Simple Synthesizer Voice", 
-            "440Hz voice with vibrato (5Hz, 1%) and tremolo (3Hz, 10%)", 3.0);
+            "440Hz voice with vibrato (5Hz, 1%) and tremolo (3Hz, 10%)", frequency: 440);
     }
     
     static WaveformData MultiOscExample()
@@ -401,7 +412,7 @@ class Program
             .ApplyModulator(subOsc);
         
         return GenerateWaveformData(combinedSignal, "Multi-Oscillator Synthesizer", 
-            "Combined sine, digital square, analog square oscillators with sub-oscillator", 2.0);
+            "Combined sine, digital square, analog square oscillators with sub-oscillator", frequency: 220);
     }
     
     // Drum Synthesis Examples
@@ -463,6 +474,6 @@ class Program
         var comparison = digital.ApplyModulator(analog).ApplyModulator(selector);
         
         return GenerateWaveformData(comparison, "Square Wave Comparison", 
-            "Digital vs analog square wave comparison with slow crossfade", 4.0);
+            "Digital vs analog square wave comparison with slow crossfade", frequency: 100);
     }
 }

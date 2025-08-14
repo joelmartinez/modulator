@@ -3,6 +3,7 @@
   "Description": "A 2.5Hz LFO with 50% amplitude for modulation purposes",
   "Duration": 2,
   "SampleRate": 1000,
+  "Frequency": 2.5,
   "Samples": [
     {
       "Time": 0,
