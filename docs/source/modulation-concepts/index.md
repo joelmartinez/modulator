@@ -39,7 +39,7 @@ var vibratoNote = note.ApplyModulator(vibrato);
 ```
 
 <div class="waveform-visualization">
-    <canvas id="vibratoCanvas" width="800" height="300"></canvas>
+    <canvas id="vibratoCanvas" class="waveform-visualization" data-sample="vibrato.json" width="800" height="300"></canvas>
 </div>
 
 #### Tremolo
@@ -146,15 +146,3 @@ dotnet run --project ModulatorSampleCLI complex-mod complex.json
 dotnet run --project ModulatorSampleCLI test-square comparison.json
 ```
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Create visualizer for vibrato example
-    const canvas = document.getElementById('vibratoCanvas');
-    if (canvas) {
-        const visualizer = new WaveformVisualizer('vibratoCanvas', {
-            width: 800, height: 300
-        });
-        visualizer.loadData('/assets/samples/vibrato.json');
-    }
-});
-</script>

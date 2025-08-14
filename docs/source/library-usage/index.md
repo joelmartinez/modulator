@@ -71,7 +71,7 @@ for (double t = 0; t < 1.0; t += 0.01)
 ```
 
 <div class="waveform-visualization">
-    <canvas id="basicSineWaveCanvas" width="800" height="300"></canvas>
+    <canvas id="basicSineWaveCanvas" class="waveform-visualization" data-sample="basic-sine.json" width="800" height="300"></canvas>
 </div>
 
 #### Low Frequency Oscillator (LFO)
@@ -430,7 +430,7 @@ public class MultiOscSynth
 ```
 
 <div class="waveform-visualization">
-    <canvas id="multiOscCanvas" width="800" height="300"></canvas>
+    <canvas id="multiOscCanvas" class="waveform-visualization" data-sample="multi-osc.json" width="800" height="300"></canvas>
 </div>
 
 ### Percussion Synthesis with Square Waves
@@ -508,26 +508,4 @@ dotnet run --project ModulatorSampleCLI multi-osc multi-osc.json
 dotnet run --project ModulatorSampleCLI list
 ```
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Create visualizers for all the examples on this page
-    const examples = [
-        { id: 'basicSineWaveCanvas', file: 'basic-sine.json' },
-        { id: 'lfoCanvas', file: 'lfo.json' },
-        { id: 'digitalSquareCanvas', file: 'digital-square.json' },
-        { id: 'analogSquareCanvas', file: 'analog-square.json' },
-        { id: 'simpleModulationCanvas', file: 'simple-modulation.json' },
-        { id: 'multiOscCanvas', file: 'multi-osc.json' }
-    ];
-    
-    examples.forEach(example => {
-        const canvas = document.getElementById(example.id);
-        if (canvas) {
-            const visualizer = new WaveformVisualizer(example.id, {
-                width: 800, height: 300
-            });
-            visualizer.loadData('/assets/samples/' + example.file);
-        }
-    });
-});
-</script>
+/script>
