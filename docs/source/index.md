@@ -23,6 +23,22 @@ Modulation is the process of varying one signal (the carrier) based on another s
 - **High Performance**: Efficient mathematical operations for real-time applications
 - **Extensible**: Build custom modulation sources by implementing the interface
 
+## Installation
+
+Install the Modulator library via NuGet:
+
+```bash
+dotnet add package CodeCube.Modulator
+```
+
+Or use the NuGet Package Manager in Visual Studio:
+
+```
+Install-Package CodeCube.Modulator
+```
+
+You can also browse and download the package from [NuGet.org](https://www.nuget.org/packages/CodeCube.Modulator).
+
 ## Quick Start
 
 ```csharp
