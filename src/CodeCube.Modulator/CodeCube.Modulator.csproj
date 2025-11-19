@@ -4,6 +4,23 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    
+    <!-- NuGet Package Properties -->
+    <PackageId>CodeCube.Modulator</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Joel Martinez</Authors>
+    <Company>Joel Martinez</Company>
+    <Description>Modulation Library in C#</Description>
+    <PackageProjectUrl>https://github.com/joelmartinez/modulator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/joelmartinez/modulator</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/"/>
+  </ItemGroup>
 
 </Project>
