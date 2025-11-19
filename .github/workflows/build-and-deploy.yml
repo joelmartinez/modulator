@@ -39,6 +39,29 @@ jobs:
       with:
         name: documentation
         path: docsout
+
+  publish-nuget:
+    if: github.ref == 'refs/heads/main'
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0.x
+        
+    - name: Create NuGet Package
+      run: dotnet pack src/CodeCube.Modulator/CodeCube.Modulator.csproj --configuration Release --output ./nupkg
+      
+    - name: Publish to NuGet
+      run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+
         
   deploy-docs:
     if: github.ref == 'refs/heads/main'

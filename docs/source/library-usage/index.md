@@ -8,6 +8,16 @@ subtitle: Complete guide to using the Modulator library classes and methods.
 
 This guide covers how to use the classes and interfaces provided by the Modulator library to create and manipulate modulated signals.
 
+## Installation
+
+Install the library from NuGet:
+
+```bash
+dotnet add package CodeCube.Modulator
+```
+
+Or search for **CodeCube.Modulator** in the NuGet Package Manager.
+
 ## Core Interface: IModulationSource
 
 All modulation sources in the library implement the `IModulationSource` interface, which provides a consistent API for working with any type of modulation source.
