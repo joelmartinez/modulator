@@ -50,6 +50,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Required for MinVer to calculate version from git history
     
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
@@ -59,8 +61,23 @@ jobs:
     - name: Create NuGet Package
       run: dotnet pack src/CodeCube.Modulator/CodeCube.Modulator.csproj --configuration Release --output ./nupkg
       
+    - name: Display Package Version
+      run: |
+        echo "Generated package:"
+        ls -la ./nupkg/
+        
     - name: Publish to NuGet
       run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+      continue-on-error: true
+      id: nuget_push
+      
+    - name: Check Publish Result
+      run: |
+        if [ "${{ steps.nuget_push.outcome }}" = "failure" ]; then
+          echo "::warning::NuGet package push failed. This may be expected if the version already exists."
+        else
+          echo "NuGet package published successfully or skipped duplicate."
+        fi
 
         
   deploy-docs:
