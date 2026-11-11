@@ -1,0 +1,59 @@
+{
+  "author": "Joel Martinez",
+  "bugs": {
+    "url": "https://github.com/joelmartinez/modulator/issues"
+  },
+  "description": "Modulator \u2014 a small, dependency-free modulation library: waveform, noise, value, and context modulators with bindings that write into plain objects and Tone-style parameters. The TypeScript companion to CodeCube.Modulator (C#), extracted from codecube.net. MIT licensed. npm publishing happens only on the owner's word.",
+  "devDependencies": {
+    "jest": "^30.0.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js",
+      "import": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://github.com/joelmartinez/modulator#readme",
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/jest-globals.js"
+    ]
+  },
+  "keywords": [
+    "modulation",
+    "lfo",
+    "envelope",
+    "noise",
+    "web-audio",
+    "synth",
+    "signal"
+  ],
+  "license": "MIT",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "name": "@codecube/modulator",
+  "private": false,
+  "repository": {
+    "directory": "ts",
+    "type": "git",
+    "url": "git+https://github.com/joelmartinez/modulator.git"
+  },
+  "scripts": {
+    "pack:dry-run": "npm pack --dry-run",
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "version": "0.1.0",
+  "types": "./src/index.d.ts"
+}
