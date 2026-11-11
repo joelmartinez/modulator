@@ -1,32 +1,41 @@
 @inherits Chloroplast.Core.Rendering.ChloroplastTemplateBase<Chloroplast.Core.Rendering.RenderedContent>
-@using System.Linq;
-@using System.Collections.Generic;
-@using Microsoft.Extensions.Configuration;
-@using Chloroplast.Core.Extensions;
-@using MiniRazor;
-@{
-    RawString RenderNodes(IConfigurationSection section)
+@using System.Linq
+@using System.Collections.Generic
+@using Microsoft.Extensions.Configuration
+@using Chloroplast.Core.Extensions
+@using System.Net
+@using System.Text
+@using MiniRazor
+@functions {
+    private RawString RenderNodes(IConfigurationSection section)
     {
-        var children = section.GetChildren();
-        if (children.Any())
+        var children = section.GetChildren().ToArray();
+        if (children.Length == 0)
         {
-        <ul class="nav-menu">
-            @foreach(var item in children)
-            {
-                <li class="nav-item">
-                    <a href="@Href("/" + item["path"])" class="nav-link">@item["title"]</a>
-                    @if (item.ContainsKey("items"))
-                    {
-                        @RenderNodes(item.GetSection("items"))
-                    }
-                </li>
-            }
-        </ul>
+            return new RawString("");
         }
-        return new RawString("");
+
+        var builder = new StringBuilder();
+        builder.Append("<ul class=\"nav-menu\">");
+        foreach (var item in children)
+        {
+            builder.Append("<li class=\"nav-item\">");
+            builder.Append("<a href=\"");
+            builder.Append(WebUtility.HtmlEncode(Href("/" + item["path"])));
+            builder.Append("\" class=\"nav-link\">");
+            builder.Append(WebUtility.HtmlEncode(item["title"]));
+            builder.Append("</a>");
+            if (item.ContainsKey("items"))
+            {
+                builder.Append(RenderNodes(item.GetSection("items")).ToString());
+            }
+            builder.Append("</li>");
+        }
+        builder.Append("</ul>");
+        return new RawString(builder.ToString());
     }
 }
 
 <div class="sidebar" id="leftnav">
-    @RenderNodes(Model.Metadata.GetSection ("navTree"))
+    @RenderNodes(Model.Metadata.GetSection("navTree"))
 </div>
