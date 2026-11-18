@@ -7,8 +7,8 @@
     
     <!-- NuGet Package Properties -->
     <PackageId>CodeCube.Modulator</PackageId>
-    <Authors>Joel Martinez</Authors>
-    <Company>Joel Martinez</Company>
+    <Authors>CodeCube Ventures</Authors>
+    <Company>CodeCube Ventures</Company>
     <Description>Modulation Library in C#</Description>
     <PackageProjectUrl>https://github.com/joelmartinez/modulator</PackageProjectUrl>
     <RepositoryUrl>https://github.com/joelmartinez/modulator</RepositoryUrl>
